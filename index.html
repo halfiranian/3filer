@@ -3,11 +3,32 @@
 <head>
     <title>Jquery Blank Template page</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.js"></script>
-	<script src="files/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="files/styles.css">
-	<link href="files/css/bootstrap.min.css" rel="stylesheet" media="screen">
-	<link href="files/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
-	<script type="text/javascript" src="files/scripts.js"></script>
+	<script src="http://action.greenpeace.org.uk/page/-/bootstrap/bootstrap.min.js"></script>
+	<link href="http://action.greenpeace.org.uk/page/-/bootstrap/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+	<link href="http://action.greenpeace.org.uk/page/-/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen">
+	<script type="text/javascript">
+	
+	$(function () { 
+		
+	$("#multi .btn").click(function(){
+		var email = $("input#email").val();
+		var dataString = 'email=' + email;
+		console.log(dataString);
+		$.ajax({
+	      type: "POST",
+	      url: "/page/signup/multistep",
+	      data: dataString,
+	      success: function() {
+	        $('#result').text("whoopwhoop")
+	      }
+	     });
+	    return false;
+	});
+
+
+	});
+	
+	</script>
 	
 </head>
 <body>

@@ -5,7 +5,7 @@ $("#multi .btn").click(function(){
 	console.log(dataString);
 	$.ajax({
       type: "POST",
-      url: "http://action.greenpeace.org.uk/page/signup/multistep",
+      url: "/page/signup/multistep",
       data: dataString,
       success: function() {
         $('#result').text("whoopwhoop")
